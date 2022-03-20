@@ -7,11 +7,13 @@ dependencies:
   - python=3.8
   - dvc-s3
   - numpy
-  - pandas
+  - pandas=1.2
   - scikit-learn
   - pytest
   - requests
   - uvicorn
   - gunicorn
+  - jupyterlab
   - pip: 
       - fastapi==0.63.0
+      - pandas-profiling==2.8.0
