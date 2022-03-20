@@ -1,0 +1,17 @@
+name: fastapi_heroku_pr
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - pip
+  - python=3.8
+  - dvc-s3
+  - numpy
+  - pandas
+  - scikit-learn
+  - pytest
+  - requests
+  - uvicorn
+  - gunicorn
+  - pip: 
+      - fastapi==0.63.0
