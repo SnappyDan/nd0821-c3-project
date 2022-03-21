@@ -1,0 +1,24 @@
+schema: '2.0'
+stages:
+  build_inf_pipeline:
+    cmd: python train_model.py
+    deps:
+    - path: ../data/census_cor.csv
+      md5: 04c16ef8cf62e8bcd3ea02edda232327
+      size: 3995911
+    - path: ml/data.py
+      md5: 6979161b4d3418b42c1e04036651878b
+      size: 2544
+    - path: ml/model.py
+      md5: 2f5c6f4344a5d384d921bc45949bb29c
+      size: 1449
+    - path: train_model.py
+      md5: 0d314afff8d6c734115ae7dcbe42608a
+      size: 2054
+    outs:
+    - path: ../model/cl_model.joblib
+      md5: 578e4da27345e5c41b1e23e21ed27f06
+      size: 1653
+    - path: ../model/encoder.joblib
+      md5: 26ffbe1eea47094a932e912fd33b7511
+      size: 4000

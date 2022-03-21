@@ -1,0 +1,11 @@
+stages:
+  build_inf_pipeline:
+    cmd: python train_model.py
+    deps:
+    - ../data/census_cor.csv
+    - ml/data.py
+    - ml/model.py
+    - train_model.py
+    outs:
+    - ../model/cl_model.joblib
+    - ../model/encoder.joblib

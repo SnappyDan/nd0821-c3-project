@@ -18,7 +18,7 @@ data = pd.read_csv('../data/census_cor.csv')
 # Optional enhancement, use K-fold cross validation instead of a train-test split.
 logger.info("Splitting data ...")
 train, test = train_test_split(data, test_size=0.20)
-logger.inof("Done")
+logger.info("Done")
 
 cat_features = [
     "workclass",
