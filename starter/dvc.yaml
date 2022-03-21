@@ -9,3 +9,4 @@ stages:
     outs:
     - ../model/cl_model.joblib
     - ../model/encoder.joblib
+    - ../metrics/slice_output.txt
