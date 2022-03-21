@@ -5,6 +5,7 @@ from sklearn.model_selection import train_test_split
 # Add the necessary imports for the starter code.
 from ml.data import process_data
 from ml.model import train_model, compute_model_metrics, inference
+from metrics_on_slices import edu_slice_metrics
 import pandas as pd
 from joblib import dump, load
 import os
@@ -59,3 +60,9 @@ preds = inference(loaded_model, X_test)
 
 precision, recall, fbeta = compute_model_metrics(y_test, preds)
 logger.info(f"Precision: {precision}, Recall: {recall}, Fbeta: {fbeta}")
+
+edu_slice_metrics(model=loaded_model,
+                    encoder=encoder,
+                    lb=lb,
+                    cat_features=cat_features, 
+                    test_data=test)
