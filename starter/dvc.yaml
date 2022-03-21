@@ -6,7 +6,9 @@ stages:
     - ml/data.py
     - ml/model.py
     - train_model.py
+    - metrics_on_slices.py
     outs:
     - ../model/cl_model.joblib
     - ../model/encoder.joblib
+    - ../model/lb.joblib
     - ../metrics/slice_output.txt

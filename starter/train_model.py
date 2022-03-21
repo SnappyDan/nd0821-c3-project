@@ -18,7 +18,7 @@ logger = logging.getLogger()
 data = pd.read_csv('../data/census_cor.csv')
 # Optional enhancement, use K-fold cross validation instead of a train-test split.
 logger.info("Splitting data ...")
-train, test = train_test_split(data, test_size=0.20)
+train, test = train_test_split(data, test_size=0.20, random_state=42)
 logger.info("Done")
 
 cat_features = [
@@ -50,9 +50,12 @@ logger.info("SUCCESS")
 MODEL_PATH = '../model'
 MODEL_NAME = 'cl_model.joblib'
 ENCODER_NAME = 'encoder.joblib'
-logger.info("Saving model and encoder ...")
+LB_NAME = 'lb.joblib'
+logger.info("Saving inference pipeline artifacts (models/encoders/binarizers etc.) ...")
 dump(model, os.path.join(MODEL_PATH, MODEL_NAME))
 dump(encoder, os.path.join(MODEL_PATH, ENCODER_NAME))
+dump(lb, os.path.join(MODEL_PATH, LB_NAME))
+logger.info("Done")
 
 # Load the model, get the inference on the test set and model metrics
 loaded_model = load(os.path.join(MODEL_PATH, MODEL_NAME))
