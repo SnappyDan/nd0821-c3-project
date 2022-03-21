@@ -16,7 +16,8 @@ logger = logging.getLogger()
 
 # Add code to load in the data.
 data = pd.read_csv('../data/census_cor.csv')
-# Optional enhancement, use K-fold cross validation instead of a train-test split.
+# Optional enhancement, use K-fold cross validation instead of a
+# train-test split.
 logger.info("Splitting data ...")
 train, test = train_test_split(data, test_size=0.20, random_state=42)
 logger.info("Done")
@@ -51,7 +52,8 @@ MODEL_PATH = '../model'
 MODEL_NAME = 'cl_model.joblib'
 ENCODER_NAME = 'encoder.joblib'
 LB_NAME = 'lb.joblib'
-logger.info("Saving inference pipeline artifacts (models/encoders/binarizers etc.) ...")
+logger.info(
+    "Saving inference pipeline artifacts (models/encoders/binarizers etc.) ...")
 dump(model, os.path.join(MODEL_PATH, MODEL_NAME))
 dump(encoder, os.path.join(MODEL_PATH, ENCODER_NAME))
 dump(lb, os.path.join(MODEL_PATH, LB_NAME))
@@ -65,7 +67,7 @@ precision, recall, fbeta = compute_model_metrics(y_test, preds)
 logger.info(f"Precision: {precision}, Recall: {recall}, Fbeta: {fbeta}")
 
 edu_slice_metrics(model=loaded_model,
-                    encoder=encoder,
-                    lb=lb,
-                    cat_features=cat_features, 
-                    test_data=test)
+                  encoder=encoder,
+                  lb=lb,
+                  cat_features=cat_features,
+                  test_data=test)

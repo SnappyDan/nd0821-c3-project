@@ -1,6 +1,7 @@
 from ml.data import process_data
 from ml.model import inference, compute_model_metrics
 
+
 def edu_slice_metrics(model, encoder, lb, test_data, cat_features):
     """ Function for calculating performance metrics on edu-slices census dataset."""
     with open('../metrics/slice_output.txt', mode='w+') as so_file:
@@ -16,5 +17,6 @@ def edu_slice_metrics(model, encoder, lb, test_data, cat_features):
 
             so_file.write(f"Class: {cls}")
             so_file.write('\n')
-            so_file.write(f"Precision: {precision}, Recall: {recall}, Fbeta: {fbeta}")
+            so_file.write(
+                f"Precision: {precision}, Recall: {recall}, Fbeta: {fbeta}")
             so_file.write('\n\n')
