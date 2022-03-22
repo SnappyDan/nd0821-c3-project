@@ -57,7 +57,7 @@ app = FastAPI()
 
 def load_inf_pipeline():
     """Helper function to load model and encoder"""
-    model = load('model/cL_model.joblib')
+    model = load('model/cl_model.joblib')
     encoder = load('model/encoder.joblib')
     return encoder, model
 
