@@ -130,3 +130,9 @@ dmypy.json
 
 # VSCode
 .vscode
+
+# MAC
+.DS_Store
+
+#Others
+test_encoder.py

@@ -4,8 +4,8 @@ stages:
     cmd: python train_model.py
     deps:
     - path: ../data/census_cor.csv
-      md5: 171eff96d34336df1a3d2d82bdb82fe3
-      size: 3811654
+      md5: 6de9da3f2bfa683453a136a99fca84fa
+      size: 3551166
     - path: metrics_on_slices.py
       md5: 31e3a79f2c22e3a398cd96efa3299470
       size: 1033
@@ -20,14 +20,14 @@ stages:
       size: 2724
     outs:
     - path: ../metrics/slice_output.txt
-      md5: 247ffe74d290496d041b3acbb108e9e1
-      size: 1415
+      md5: e9023061486832d8a7a816fa6fd038f7
+      size: 1399
     - path: ../model/cl_model.joblib
       md5: 3ce6094345555b2fc33d7e6874cbb554
       size: 1645
     - path: ../model/encoder.joblib
-      md5: 26ffbe1eea47094a932e912fd33b7511
-      size: 4000
+      md5: a553f204feb7d25cff7013915fd7ce8a
+      size: 3898
     - path: ../model/lb.joblib
       md5: 7fa2de23a5eb1763a5e5c53a58e8867f
       size: 411
