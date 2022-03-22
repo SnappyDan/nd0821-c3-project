@@ -1,10 +1,9 @@
 # Put the code for your API here.
-from ast import alias
 from fastapi import FastAPI
 from pydantic import BaseModel, Field
 from fastapi.encoders import jsonable_encoder
 from starter.ml.data import process_data
-from starter.ml.model import train_model, inference, compute_model_metrics
+from starter.ml.model import inference
 
 import pandas as pd
 
@@ -96,7 +95,5 @@ def predict(cen_data: CensusDataItem):
 
     logger.debug(f"Predictions: {preds}")
     logger.debug(type(preds))
-    
+
     return preds.tolist()[0]
-
-
