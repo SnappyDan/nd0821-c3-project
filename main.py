@@ -11,17 +11,17 @@ from joblib import load
 import logging
 
 
-logging.basicConfig(level=logging.INFO, format="%(asctime)-15s %(message)s")
+logging.basicConfig(level=logging.DEBUG, format="%(asctime)-15s %(message)s")
 logger = logging.getLogger()
 
 
 class CensusDataItem(BaseModel):
     age: int
-    capital_gain: int = Field(alias="capital-gain")
-    capital_loss: int = Field(alias="capital-loss")
+    fnlgt: int
     education: str
     education_num: int = Field(alias="education-num")
-    fnlgt: int
+    capital_gain: int = Field(alias="capital-gain")
+    capital_loss: int = Field(alias="capital-loss")
     hours_per_week: int = Field(alias="hours-per-week")
     marital_status: str = Field(alias="marital-status")
     occupation: str
@@ -35,11 +35,11 @@ class CensusDataItem(BaseModel):
         schema_extra = {
             "example": {
                 "age": 39,
-                "capital-gain": 1234,
-                "capital-loss": 0,
+                "fnlgt": 77516,
                 "education": "Bachelors",
                 "education-num": 13,
-                "fnlgt": 77516,
+                "capital-gain": 1234,
+                "capital-loss": 0,
                 "hours-per-week": 40,
                 "marital-status": "Never-married",
                 "occupation": "Adm-clerical",
@@ -70,7 +70,7 @@ def root():
 @app.post('/model')
 def predict(cen_data: CensusDataItem):
     df_request = pd.DataFrame.from_dict([jsonable_encoder(cen_data)])
-    logger.info(df_request.columns.values)
+    logger.info(df_request)
 
     encoder, model = load_inf_pipeline()
 
