@@ -9,10 +9,17 @@ import pandas as pd
 
 from joblib import load
 import logging
+import os
 
 
 logging.basicConfig(level=logging.DEBUG, format="%(asctime)-15s %(message)s")
 logger = logging.getLogger()
+
+if "DYNO" in os.environ and os.path.isdir(".dvc"):
+    os.system("dvc config core.no_scm true")
+    if os.system("dvc pull") != 0:
+        exit("dvc pull failed")
+    os.system("rm -r .dvc .apt/usr/lib/dvc")
 
 
 class CensusDataItem(BaseModel):
