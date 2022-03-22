@@ -1,7 +1,6 @@
 import pytest
 import pandas as pd
 from sklearn.model_selection import train_test_split
-from starter.ml.model import train_model, inference, compute_model_metrics
 from starter.ml.data import process_data
 from joblib import load
 
