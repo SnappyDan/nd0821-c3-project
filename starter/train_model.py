@@ -11,7 +11,7 @@ from joblib import dump, load
 import os
 import logging
 
-logging.basicConfig(level=logging.INFO, format="%(asctime)-15s %(message)s")
+logging.basicConfig(level=logging.DEBUG, format="%(asctime)-15s %(message)s")
 logger = logging.getLogger()
 
 # Add code to load in the data.
@@ -21,7 +21,9 @@ data = pd.read_csv('../data/census_cor.csv')
 logger.info("Splitting data ...")
 train, test = train_test_split(data, test_size=0.20, random_state=42)
 logger.info("Done")
-
+logger.debug(f"Number of columns in 'train': {len(train.columns)}")
+logger.debug(f"Columns in 'train': {train.columns.values}")
+logger.debug(f"Number of columns in 'test': {len(test.columns)}")
 cat_features = [
     "workclass",
     "education",
@@ -37,6 +39,7 @@ X_train, y_train, encoder, lb = process_data(
     train, categorical_features=cat_features, label="salary", training=True
 )
 logger.info("SUCCESS: Train data is preprocessed.")
+logger.debug(f"X_train shape: {X_train.shape}")
 # Proces the test data with the process_data function.
 logger.info("Preprocessing test data ...")
 X_test, y_test, encoder, lb = process_data(
@@ -44,6 +47,7 @@ X_test, y_test, encoder, lb = process_data(
     encoder=encoder, lb=lb
 )
 logger.info("SUCCCES: Test data is preprocessed")
+logger.debug(f"X_test shape: {X_train.shape}")
 # Train and save model and encoder.
 logger.info("Training the model ...")
 model = train_model(X_train, y_train)
