@@ -5,6 +5,7 @@ from starter.ml.model import train_model, inference, compute_model_metrics
 from starter.ml.data import process_data
 from joblib import load
 
+
 @pytest.fixture(scope="session")
 def data():
 
@@ -86,7 +87,7 @@ def preds():
         "sex",
         "native-country",
     ]
-    X_test, _ , _, _ = process_data(
+    X_test, _, _, _ = process_data(
         test, categorical_features=cat_features, label="salary", training=False,
         encoder=encoder, lb=lb
     )
@@ -99,4 +100,3 @@ def get_train_test():
     data = pd.read_csv('data/census_cor.csv')
     train, test = train_test_split(data, test_size=0.20, random_state=42)
     return train, test
-

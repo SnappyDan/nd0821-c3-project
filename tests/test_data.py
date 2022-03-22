@@ -1,4 +1,3 @@
-import pandas as pd
 from starter.ml.data import process_data
 from sklearn.preprocessing import LabelBinarizer, OneHotEncoder
 
@@ -6,14 +5,14 @@ from sklearn.preprocessing import LabelBinarizer, OneHotEncoder
 def test_raw_data(data):
 
     cat_features = [
-    "workclass",
-    "education",
-    "marital-status",
-    "occupation",
-    "relationship",
-    "race",
-    "sex",
-    "native-country",
+        "workclass",
+        "education",
+        "marital-status",
+        "occupation",
+        "relationship",
+        "race",
+        "sex",
+        "native-country",
     ]
 
     assert set(data.columns.values).issuperset(set(cat_features))
@@ -22,14 +21,14 @@ def test_raw_data(data):
 def test_process_data(data):
 
     cat_features = [
-    "workclass",
-    "education",
-    "marital-status",
-    "occupation",
-    "relationship",
-    "race",
-    "sex",
-    "native-country",
+        "workclass",
+        "education",
+        "marital-status",
+        "occupation",
+        "relationship",
+        "race",
+        "sex",
+        "native-country",
     ]
 
     X, y, encoder, lb = process_data(
