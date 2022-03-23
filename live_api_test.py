@@ -1,4 +1,8 @@
 import requests
+import logging
+
+logging.basicConfig(level=logging.DEBUG, format="%(asctime)-15s %(message)s")
+logger = logging.getLogger()
 
 data_item = {
         "age": 45,
@@ -16,7 +20,9 @@ data_item = {
         "native-country": "United-States",
         "workclass": "State-gov"  
     }
-response = requests.post('https://udacity-fastapi-mlops.herokuapp.com/', json=data_item)
+response = requests.post('https://udacity-mlops2.herokuapp.com/model', json=data_item)
+
+logger.debug(response.json())
 
 print(f"Response Status Code: {response.status_code}")
 if response.status_code == 200:
