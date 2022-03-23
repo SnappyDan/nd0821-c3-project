@@ -1,0 +1,50 @@
+Model metrics per EDU class slice
+
+Class: Some-college
+Precision: 0.6132075471698113, Recall: 0.23465703971119134, Fbeta: 0.3394255874673629
+
+Class: HS-grad
+Precision: 0.6033057851239669, Recall: 0.21159420289855072, Fbeta: 0.3133047210300429
+
+Class: Bachelors
+Precision: 0.8198757763975155, Recall: 0.29333333333333333, Fbeta: 0.43207855973813425
+
+Class: Masters
+Precision: 0.8857142857142857, Recall: 0.2995169082125604, Fbeta: 0.4476534296028881
+
+Class: Assoc-acdm
+Precision: 0.9285714285714286, Recall: 0.2765957446808511, Fbeta: 0.42622950819672134
+
+Class: 7th-8th
+Precision: 0.25, Recall: 0.16666666666666666, Fbeta: 0.2
+
+Class: 11th
+Precision: 0.7, Recall: 0.6363636363636364, Fbeta: 0.6666666666666666
+
+Class: Assoc-voc
+Precision: 0.5357142857142857, Recall: 0.23809523809523808, Fbeta: 0.3296703296703297
+
+Class: Prof-school
+Precision: 0.9354838709677419, Recall: 0.34523809523809523, Fbeta: 0.5043478260869565
+
+Class: 9th
+Precision: 0.5, Recall: 0.3333333333333333, Fbeta: 0.4
+
+Class: 5th-6th
+Precision: 0.5, Recall: 0.5, Fbeta: 0.5
+
+Class: 10th
+Precision: 0.5714285714285714, Recall: 0.3333333333333333, Fbeta: 0.4210526315789474
+
+Class: Doctorate
+Precision: 1.0, Recall: 0.3333333333333333, Fbeta: 0.5
+
+Class: 12th
+Precision: 0.25, Recall: 0.2, Fbeta: 0.22222222222222224
+
+Class: 1st-4th
+Precision: 0.0, Recall: 1.0, Fbeta: 0.0
+
+Class: Preschool
+Precision: 1.0, Recall: 1.0, Fbeta: 1.0
+
